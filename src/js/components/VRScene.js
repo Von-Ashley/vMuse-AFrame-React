@@ -5,6 +5,11 @@ import 'babel-polyfill';
 import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// MUI
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+import RaisedButton from 'material-ui/RaisedButton';
 
 import Camera from './Camera';
 import Text from './Text';
@@ -14,6 +19,10 @@ import Animation from './Animation';
 import ArtObjectContainer from './ArtObjectContainer';
 import Navigation from './Navigation';
 import axios from 'axios'
+
+const style = {
+  margin: 12,
+};
 
 let imageArray = [  'http://i.imgur.com/niHC9wI.jpg',
                     'https://c2.staticflickr.com/8/7348/26737615540_da23843fe8_b.jpg',
@@ -140,9 +149,11 @@ class VRScene extends React.Component {
       );
     } else {
       return (
+         <MuiThemeProvider>
         <div>
-          <button onClick={this.changeVRMode}>VR Mode</button>
+          <RaisedButton onClick={this.changeVRMode} label="Enter VR Mode" secondary={true} style={style} />
         </div>
+        </MuiThemeProvider>
       )
     }
   }
