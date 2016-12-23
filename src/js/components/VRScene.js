@@ -21,7 +21,14 @@ import Navigation from './Navigation';
 import axios from 'axios'
 
 const style = {
-  margin: 12,
+  button: {
+    margin: 12,
+    width: '40%'
+  },
+  buttonContainer: {
+    textAlign: 'center',
+    marginTop: '25%',
+  }
 };
 
 let imageArray = [  'http://i.imgur.com/niHC9wI.jpg',
@@ -150,8 +157,8 @@ class VRScene extends React.Component {
     } else {
       return (
          <MuiThemeProvider>
-        <div>
-          <RaisedButton onClick={this.changeVRMode} label="Enter VR Mode" secondary={true} style={style} />
+        <div style={style.buttonContainer}>
+          <RaisedButton onClick={this.changeVRMode} label="Enter VR Mode" secondary={true} style={style.button} />
         </div>
         </MuiThemeProvider>
       )
