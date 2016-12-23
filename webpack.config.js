@@ -32,7 +32,7 @@ module.exports = {
     filename: 'bundle.js',
     // Bundle will be built at ./src/media/js.
     path: './build',
-    publicPath: '/',
+    publicPath: '/build',
   },
   module: {
     noParse: [
