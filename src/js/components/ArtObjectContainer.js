@@ -49,7 +49,7 @@ class ArtObjectContainer extends Component {
     let position = circularPositionFromIndex(index, artBoxSize)
 
     if(index === this.props.currentArtObject){
-      position = {x: 1, y:0, z: 1}
+      position = {x: 1, y:0, z: 0}
       // artBoxSize = 3
     } else{
       let position = circularPositionFromIndex(index, artBoxSize)
