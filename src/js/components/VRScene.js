@@ -120,7 +120,7 @@ class VRScene extends React.Component {
             forward={this.onNext.bind(this)}
             back={this.onPrev.bind(this)}
             exit={this.exitVRMode.bind(this)} />
-          <ArtObjectContainer
+          <ArtObjectContainer 
             showAllCollections={this.state.showAllCollections}
             artObjectIndex={this.state.artObjectIndex}
             vrMode={this.state.vrMode}
@@ -129,7 +129,8 @@ class VRScene extends React.Component {
             onCollection={this.onCollection}
             onArtObject ={this.onArtObject}
             currentArtObject={this.state.currentArtObject}
-            vrCollections={this.state.collections}/>
+            vrCollections={this.state.collections}
+            />
         </Scene>
       );
     } else {

@@ -10,6 +10,7 @@ export function circularPositionFromIndex(index, boxSize) {
   let y = yIndex % 2 === 0 ? (yIndex*boxSize)*-1 : Math.ceil(yIndex*boxSize)
 
   let circleIndex = index % itemsPerCircle
+  // console.log(index)
   let angle = circleIndex * radiansPerIndex
   let x = 0 + Math.sin(angle)*radius
   let z = 0 + Math.cos(angle)*radius

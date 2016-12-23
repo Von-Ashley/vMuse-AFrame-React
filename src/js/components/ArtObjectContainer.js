@@ -4,6 +4,8 @@ import ArtObject from './ArtObject'
 import { circularPositionFromIndex } from '../../utils/calculations'
 import collections from '../../data/collections'
 import Sky from './Sky'
+import eventProxy from './event-proxy'
+
 import CollectionArtObject from './CollectionArtObject'
 
 // const styles = require('../../scss/Members.scss')
@@ -11,8 +13,9 @@ let collectionBoxSize = 1
 let artBoxSize = .75
 
 class ArtObjectContainer extends Component {
+
   render () {
-    console.log(this.props.vrCollections[0], '*********');
+    // console.log(eventProxy)
     let artObjects;
     if (this.props.vrCollections[this.props.artObjectIndex] !== undefined) {
       artObjects = this.props.vrCollections[this.props.artObjectIndex]['art_objects']
@@ -44,10 +47,9 @@ class ArtObjectContainer extends Component {
 
   renderArtObjects (c, index) {
     let position = circularPositionFromIndex(index, artBoxSize)
-    console.log(position)
 
     if(index === this.props.currentArtObject){
-      position = {x: 0, y:0, z: 2.3}
+      position = {x: 1, y:0, z: 1}
       // artBoxSize = 3
     } else{
       let position = circularPositionFromIndex(index, artBoxSize)
