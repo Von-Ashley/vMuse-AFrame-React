@@ -29,7 +29,7 @@ module.exports = {
   entry: ENTRY_POINTS,
   output: {
     // Bundle will be served at /bundle.js locally.
-    filename: 'bundle.js',
+    filename: './bulid/bundle.js',
     // Bundle will be built at ./src/media/js.
     path: './build',
     publicPath: '/build',
