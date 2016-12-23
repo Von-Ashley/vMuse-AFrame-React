@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Entity} from 'aframe-react'
+import 'aframe-animation-component';
 
 class ArtObject extends Component {
   render () {
