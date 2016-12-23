@@ -32,10 +32,10 @@ class VRScene extends React.Component {
     this.state = {
       color: 'red',
       // fuse: true,
-      // fuseTimeout: 1500, 
-      vrMode: false, 
-      assetIndex: 0, 
-      selectedImage: imageArray[0], 
+      // fuseTimeout: 1500,
+      vrMode: false,
+      assetIndex: 0,
+      selectedImage: imageArray[0],
       vrMode: false,
       assetIndex: 0,
       selectedImage: imageArray[0],
@@ -52,12 +52,19 @@ class VRScene extends React.Component {
     this.goBack = this.goBack.bind(this)
   }
    componentWillMount() {
-     axios.get(`https://vr-museum-api.herokuapp.com/v1/users/${this.props.params.userId}/collections?vr_mode=true`).then(function (response) {
-        console.log(this);
-        this.setState({
-          collections: response.data
-        })
-      }.bind(this))
+     if (this.props.params.userId === undefined) {
+       axios.get(`https://vr-museum-api.herokuapp.com/v1/collections?vr_mode=true`).then(function (response) {
+         this.setState({
+           collections: response.data
+         })
+       }.bind(this))
+     } else {
+       axios.get(`https://vr-museum-api.herokuapp.com/v1/users/${this.props.params.userId}/collections?vr_mode=true`).then(function (response) {
+         this.setState({
+           collections: response.data
+         })
+       }.bind(this))
+     }
    }
 
   onNext() {
@@ -118,7 +125,7 @@ class VRScene extends React.Component {
             forward={this.onNext.bind(this)}
             back={this.onPrev.bind(this)}
             exit={this.exitVRMode.bind(this)} />
-          <ArtObjectContainer 
+          <ArtObjectContainer
             showAllCollections={this.state.showAllCollections}
             artObjectIndex={this.state.artObjectIndex}
             vrMode={this.state.vrMode}
