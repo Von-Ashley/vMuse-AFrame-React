@@ -15,8 +15,7 @@ import ArtObjectContainer from './ArtObjectContainer';
 import Navigation from './Navigation';
 import axios from 'axios'
 
-let imageArray = ['https://c2.staticflickr.com/2/1700/24413259604_410edeebde_b.jpg',
-                    'http://i.imgur.com/niHC9wI.jpg',
+let imageArray = [  'http://i.imgur.com/niHC9wI.jpg',
                     'https://c2.staticflickr.com/8/7348/26737615540_da23843fe8_b.jpg',
                     'https://c1.staticflickr.com/9/8308/29687569852_97f82c0238_b.jpg',
                     'https://c2.staticflickr.com/8/7042/6979883093_04f7667241_b.jpg',
@@ -115,7 +114,6 @@ class VRScene extends React.Component {
           <Camera>
             <Cursor color="red" />
           </Camera>
-          <Text text="TEST!!"/>
           <Navigation
             forward={this.onNext.bind(this)}
             back={this.onPrev.bind(this)}
