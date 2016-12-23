@@ -18,7 +18,6 @@ class Navigation extends React.Component {
         <NavLink id="next" onClick={this.props.forward}
                  opacity={0.5} rotation="0 0 180"
                  text="next" textPosition="0 0.53 -0.1" textRotation="0 180 -90"/>
-        
       </Entity>
     );
   }
@@ -27,7 +26,8 @@ class Navigation extends React.Component {
 function NavLink (props) {
 
   return (
-    <Entity id={props.id} 
+    <Entity 
+      id={props.id} 
       onClick={props.onClick} 
       geometry={{arc: 180, primitive: 'torus', radius: 0.5, radiusTubular: 0.05, segmentsTubular: 60}}
       material={{color: 'blue', opacity: props.opacity, shader: 'flat', transparent: true}}

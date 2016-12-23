@@ -115,6 +115,7 @@ class VRScene extends React.Component {
           <Camera>
             <Cursor color="red" />
           </Camera>
+          <Text text="TEST!!"/>
           <Navigation
             forward={this.onNext.bind(this)}
             back={this.onPrev.bind(this)}

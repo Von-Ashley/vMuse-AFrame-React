@@ -11,7 +11,12 @@ class CollectionArtObject extends Component {
       const color = ""
 
       return (
-        <Entity geometry={{'primitive': 'box', width: width, height: height, depth: depth}}
+        <Entity geometry={{
+                  'primitive': 'box', 
+                  width: width, 
+                  height: height, 
+                  depth: depth
+                }}
                 material={{src: `url(${photoUrl})`, color}}
                 position={`${x} ${y} ${z}`}
                 onClick={this.props.onCollection.bind(null, this.props.artObjectIndex)}/>
